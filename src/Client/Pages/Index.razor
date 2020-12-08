@@ -4,9 +4,15 @@
 
 <button class="btn btn-primary" @onclick="SendMessage">Send Test Message</button>
 
+<button class="btn btn-primary" @onclick="SendEmbedded">Send With Embedded Logo Image</button>
+
 @code {
     protected async Task SendMessage()
     {
         await Http.PostAsync("/api/message", null);
+    }
+    protected async Task SendEmbedded()
+    {
+        await Http.PostAsync("/api/message/embedded", null);
     }
 }

@@ -24,5 +24,11 @@ namespace Blazor5Email.Server.Controllers
             await _emailService.SendRazorAsync("someone@contoso.com", "test message from blazor", "TestEmail");
         }
 
+        [HttpPost("embedded")]
+        public async Task Embedded()
+        {
+            await _emailService.SendWithEmbeddedImages("someone@contoso.com", "test message from blazor", "TestEmail");
+        }
+
     }
 }
